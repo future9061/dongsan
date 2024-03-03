@@ -1,26 +1,51 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <NavBar />
+  <MainPage />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from "./components/header/NavBar.vue";
+import MainPage from "./components/main/MainPage.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "app",
+  components: { NavBar, MainPage },
+};
 </script>
 
 <style>
+* {
+  cursor: default;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+#app > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#app > .menu {
+  background-color: blueviolet;
+  color: #fff;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+#app > .menu > a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 </style>
