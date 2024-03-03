@@ -1,7 +1,18 @@
 <template>
   <Banner />
   <nav>
-    <a href="" v-for="(menu, idx) in nav" :key="idx">{{ menu }}</a>
+    <div>
+      <router-link
+        v-for="(menu, idx) in nav"
+        :key="idx"
+        :to="'/' + menu.toLocaleLowerCase()"
+      >
+        <a href="">{{ menu }}</a>
+      </router-link>
+    </div>
+    <div>
+      <router-link to="/login"> <button>로그인</button></router-link>
+    </div>
   </nav>
 </template>
 
@@ -11,7 +22,7 @@ export default {
   name: "NavBar",
   data() {
     return {
-      nav: ["Home", "About", "Products"],
+      nav: ["Home", "Products"],
     };
   },
   components: { Banner },
@@ -26,9 +37,11 @@ nav {
   color: #fff;
   width: 90%;
   margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-nav > a {
+nav > div > a {
   margin-left: 10px;
   font-size: 18px;
 }

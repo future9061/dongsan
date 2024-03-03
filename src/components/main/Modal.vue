@@ -6,14 +6,14 @@
       <img :src="item.img.src" :alt="item.img.alt" />
     </div>
     <p>{{ item.content }}</p>
-    <button @click="toggle(item)">닫기</button>
+    <button @click="$emit('clickModal', item)">닫기</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "ModalView",
-  props: { item: Object, toggle: Function },
+  props: { item: Object },
 };
 </script>
 
