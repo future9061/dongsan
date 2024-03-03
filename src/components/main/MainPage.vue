@@ -12,7 +12,7 @@
       <Modal
         v-if="modalToggle.togg"
         :item="modalToggle.selectItem"
-        :toggle="toggle"
+        @clickModal="toggle(item)"
       />
     </div>
   </main>

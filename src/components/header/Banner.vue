@@ -10,7 +10,7 @@ export default {
 
 <style scoped>
 div {
-  background: #5d5d5d;
+  background: #c7c7c7;
   padding: 10px;
 }
 
